@@ -24,6 +24,11 @@ namespace NEAT
             return calculator.Calculate(inputs);
         }
 
+        public double[] CalculateSoftMax(double[] inputs)
+        {
+            return Softmax(calculator.Calculate(inputs));
+        }
+
         public double Distance(Client other)
         {
             return genome.Distance(other.genome);
@@ -32,6 +37,23 @@ namespace NEAT
         public void Mutate()
         {
             genome.Mutate();
+        }
+
+        private static double[] Softmax(double[] array)
+        {
+            double[] result = new double[array.Length];
+            double sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += Math.Exp(array[i]);
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = Math.Exp(array[i]) / sum;
+            }
+
+            return result;
         }
     }
 }
