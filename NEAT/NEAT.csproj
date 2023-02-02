@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>ZloyNEAT</AssemblyName>
+	  <Description>NEAT implementation in C#</Description>
+  </PropertyGroup>
+
+</Project>
